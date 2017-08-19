@@ -51,6 +51,27 @@
 - You can pull all values out of an array using `$pull`.
 
 ## Level 3
+- MongoDb has what are called *Common Comparison Operators*:
+	1. `$gt` greater than.
+	2. `$lt` less than.
+	3. `$gte` greater than or equal.
+	4. `$lte` less than or equal.
+	5. `$ne` not equal to.
+- Syntax is `db.<collection>.find( {"price": {"$lt": 20 }})`.
+- You can pass more than just one comparison operator.
+- To do that same to embedded lists use `"$elemMatch"`.
+- The syntax is `db.<collection>.find( {"field": {"$elemMatch" { ... }}}); ... for comparison operators.
+- To limit what is returned further, MongoDB allows one to use what are called *Projections*.
+- To apply them, pass `{"field": true}`.
+- You can also do the reverse and reject data by passing `false` instead.
+- For `find` we get back pointers to items.
+- Normally, we only get 20 documents.
+- You can get the total number of records by appending `.count()` to the end of the call.
+- `count()` is called a *Cursor Method*.
+- Another cursor method is `sort()`.
+- You can tell `sort()` what fields to sort on by passing `{"field": <1,-1>}`; where 1 is asc, -1 is desc.
+- Two more cursor methods are `.limit()` and `.skip()` which are self explanatory.
+
 
 ## Level 4
 
