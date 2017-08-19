@@ -13,3 +13,13 @@
 - You can maintain a shell connection to a container using the flags `-it`.
 
 ## Level 2
+- Dockerfiles are about automating the stuff necessary at container boot.
+- All Dockerfiles start with the keyword `FROM`.
+- You can open a port using the line `EXPOSE <port>`.
+- You can run a command in the container using `RUN`.
+- You can add contact details using `LABEL maintainer="your@email.com".
+- To build an image you use `docker image build`.
+- You can pass other information using the `--tag` command.
+- You can list all images built using `docker image ls`.
+
+## Level 3
