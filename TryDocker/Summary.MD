@@ -33,3 +33,9 @@
 - To use the Dockerfile instead, you can use the keyword `COPY`.
 - Do have the container run in the background, use `--detach` flag.
 - To link and create a volume use `-v <local_path>:<docker_path>`.
+
+## Research
+- portainer
+
+## Resources
+- [Docker Website](docker.com)
