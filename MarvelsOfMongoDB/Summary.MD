@@ -75,8 +75,15 @@
 ## Level 4
 - Lots of duplicate data is a danger to data integrity.
 - You can reference other collections like a Relational database.
+- If you include `<collection>_id` Mongo will auto-reference the other collection.
 - In this setup, we will need two queries to get all data.
-
-
+- MongoDb has what is called Atomic writes; i.e. either everything is updated or nothing is updated.
+- This is not true for references to other collections.
+- "Mongo does not support transactions by default."
+- If there is a lot of data, then use references.
+- If the information is always queried together, then use Embedded.
+- If the data rarely changes, then embed it.
+- If it changes a lot, then reference it.
 
 ## Level 5
+- 
