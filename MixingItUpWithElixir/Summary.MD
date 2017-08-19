@@ -74,4 +74,27 @@ end
 - It is common practice to have the last statement be a explicit `true ->` statement to ensure cond does not error out.
 
 ## Level 5
-- 
+- Elixir has it's own build tool called *Mix*.
+- The command to create a new project is `mix new <project>`.
+- You can run code in the context of the application using `mix run -e "command to run"`.
+- .ex files are for production; .exs are for scripts.
+- `Budget.Conversion` just means "look in folder Budget for .ex file called Conversion".
+- You declare dependencies inside of the mix.exs file.
+```elixir
+# ...
+defp deps do
+	[{:httpoison, "~> 0.10.0"}, {:poison, "~> 3.0"}]
+end
+```
+- To then install the dependencies listed call `mix deps.get`.
+- `defp` means private function.
+- `raise` is how you request a full stop error.
+
+
+
+## Reseach 
+- mix help
+
+## Resources
+- elixir-lang.org
+- dave
