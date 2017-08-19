@@ -30,7 +30,25 @@
 
 
 ## Level 2
-
+- To delete a document use `db.<collection>.remote()`.
+- To update a document use `db.<collection>.update( target, {"$set": {"key":"value"}})`.
+- The update only works on the first matching document.
+- If the update does not contain the `$set` parameter, then data is overwritten.
+- To update more than the first hit, use `{"multi": true}`
+- You can increment known numeric values using `{"$inc": {"targer": <n_to_increase>}}
+- If a document is not matched, then no update.
+- To create a document if it does not exist, then use `{"upsert": true}`.
+- You can globally remove a field using `{"$unset": {"key": ""}}.
+- You can change the name of a field using `{"$rename": { "field":"new_name"}}`.
+- You can change an embedded value using a *positional placeholder* declared as `{"$set": {"field.$": value }}`.
+- There are a few other special operations:
+	1. $max ; iff new value > than current or empty.
+	2. $min ; iff new value < than current or empty
+	3. $mul ; multiply current value by new value
+	4. And, much more.
+- You can pop elements off a list using `$pop` with 1 for last element, -1 for first element.
+- You can push elements onto a list using `$push`.
+- You can pull all values out of an array using `$pull`.
 
 ## Level 3
 
