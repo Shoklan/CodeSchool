@@ -86,4 +86,19 @@
 - If it changes a lot, then reference it.
 
 ## Level 5
-- 
+- MongoDB has a aggregation framework built in.
+- To use them, use `db.<collection>.aggregate()`.
+- This is based what are called *Stage Operators*.
+- One such operator is `"$group" to group by a field.
+- The syntax is `{"$group": {<group_key>: "$field"}}`.
+- Anything passed after the group key is called an *Accumulators*.
+- Some different accumulators are:
+	1. $sum
+	2. $avg
+	3. $match
+	4. $min
+	5. $max
+	6. $sort
+	7. $limit
+- `$match` should be used as soon as possible to reduce the compelixity of future filters in the pipeline.
+- `$project` should be used as soon as possible to reduce the compelixity of future filters in the pipeline.
