@@ -23,3 +23,13 @@
 - You can list all images built using `docker image ls`.
 
 ## Level 3
+- To get application into the image container, you can:
+	1. Copy the files into the container.
+	2. Use the Dockerfile.
+- Containers don't normally maintain permenancy.
+- To solve this, one could use a *Data volume*; which exposes local files to the container.
+- Copy files into the container using `docker container cp`.
+- The command mut source the host first and then `container_name:<path>`.
+- To use the Dockerfile instead, you can use the keyword `COPY`.
+- Do have the container run in the background, use `--detach` flag.
+- To link and create a volume use `-v <local_path>:<docker_path>`.
