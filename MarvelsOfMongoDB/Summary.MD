@@ -72,7 +72,11 @@
 - You can tell `sort()` what fields to sort on by passing `{"field": <1,-1>}`; where 1 is asc, -1 is desc.
 - Two more cursor methods are `.limit()` and `.skip()` which are self explanatory.
 
-
 ## Level 4
+- Lots of duplicate data is a danger to data integrity.
+- You can reference other collections like a Relational database.
+- In this setup, we will need two queries to get all data.
+
+
 
 ## Level 5
