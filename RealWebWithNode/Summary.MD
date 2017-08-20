@@ -25,7 +25,10 @@ var contents = fs.readFileSync('target/file', function( err, contents){
 - Worth knowing: `http.createServer( function( request, response){})` is how you start server in Node.js.
 - Node uses what is called the *Event Loop* to continue checking for requests.
 - Most other languages require blocks; this is, in Python, called the *Mutex Lock*.
-- 
+- `readFileSync()` is blocking; `readFile()` is non-blocking.
+- Issueing commands in node using `node`.
+- `writeHead()` can do more than send the 200 code.
+- `response.end()` can also return a string response.
 
 
 
