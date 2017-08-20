@@ -30,9 +30,27 @@ var contents = fs.readFileSync('target/file', function( err, contents){
 - `writeHead()` can do more than send the 200 code.
 - `response.end()` can also return a string response.
 
-
-
 ## Level 2
+- Focused on events this level.
+- Types of events include click, submit and hover.
+- Just like the DOM, many objects in Node emit events.
+- This being the case, they almost certainly inherit from **EventEmitter**.
+```js
+var EventEmitter = require('events').EventEmitter;
+var logger = new EventEmitter(); // error, warn, info events.
+
+logger.on('error', function( message ){
+	console.log('ERR: ' + message);
+});
+
+logger.emit('error', 'Spilled Milk');
+
+// These next two lines are the same:
+http.createServer( function( request, response){});
+
+var server = http.createServer(); server.on('request', function( request, response){});
+```
+
 ## Level 3
 ## Level 4
 ## Level 5
