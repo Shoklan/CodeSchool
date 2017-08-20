@@ -106,12 +106,27 @@ request.on('end', function(){
 - `module.exports.warn = warn;` for reference.
 
 
-
 ## Level 5
+- This level is about Express
+- `npm install --save express`
+- `--save` will add the package to our dependencies.
+- Require express -> assign express to new app.
+- You can pass parameters to express using `:etc`.
+- You can access those from the `get()` call using `req.params.<parameter>`.
+- You make json data not look like shit, install prettyjson.
+- Package ejs stands for embedded javascript.
+- `<% = %>` for print data.
+- `<% %>` for running code.
+- `res.render('template.ejs')` to render a template to a request.
+- `render()` can be passed a json object 
+
 ## Level 6
+- 
+
+
 ## Level 7
 
 ## Research:
 - V8 Javascript Runtime
 - Gulp.js
-- 
+- Sinatra
