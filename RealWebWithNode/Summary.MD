@@ -52,6 +52,34 @@ var server = http.createServer(); server.on('request', function( request, respon
 ```
 
 ## Level 3
+- Talking about streams this level.
+- Streams allow us to process data as soon as it is received.
+- Streams are like channels were data just flows through.
+- There are two types:
+	1. Readable.
+	2. Writable.
+- ReadableStream inherits from EventEmitter.
+```js
+request.on( 'reabale', function(){
+	var chunk = null;
+	while( null !== (chunk = request.read())){
+		console.log(chunk.toString());
+	}
+});
+request.on('end', function(){
+	response.end();
+});
+```
+- This block deals with each sent chunk of data piece by piece in non-blocking fashion.
+- Node has a function called `request.pipe( //response )` that behaves like a pipe between two clients.
+- To read files, you need `var fs = require('fs');`.
+- Then, `var file = fs.createReadStream("readme.md");`.
+- To write contents to a file, use `var newFile = fs.createWriteStream("readme_copy.md");`
+- You can pipe any read stream into any write stream.
+- You can access how large the file is supposed to be using `var fileBytes = request.headers['content-length'];
+- Instead of all that low level code, you could just call `file.pipe( process.stdout);`.
+- To force a pipe to remain open until an end is received, pass `{ end: false }` to `*.pipe()`.
+
 ## Level 4
 ## Level 5
 ## Level 6
@@ -59,4 +87,5 @@ var server = http.createServer(); server.on('request', function( request, respon
 
 ## Research:
 - V8 Javascript Runtime
+- Gulp.js
 - 
