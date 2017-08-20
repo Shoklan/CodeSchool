@@ -81,6 +81,32 @@ request.on('end', function(){
 - To force a pipe to remain open until an end is received, pass `{ end: false }` to `*.pipe()`.
 
 ## Level 4
+- To allow external access to a function, one must include `module.exports = <namespace>`.
+- In the file **app.js**, we then can include `var hello = require('./custom_hello');`
+- You can export a function explicitely using `exports.<function_name> = function(..){}`.
+- You can call the second using `gb.goodbye();` but the first as `hello();`.
+- The options passed to `http.request()` are:
+	1. host.
+	2. port.
+	3. path.
+	4. method
+- If a path is not specified, then node looks in the node_modules directory of the app.
+- Then, it checks node_modules in the home directory.
+- npm is the package manager for Node.
+- To install a package use `node install <module_name>`.
+- To install a module globally, pass the flag `-g` at the end of the command.
+- If you think you know the name, node comes with a `search` command.
+- When building a node project, the packages.json file tells node lots of important information.
+- The three most important are:
+	1. name
+	2. version
+	3. dependencies.
+- Calling `npm install` will have node check to insure all dependencies are installed.
+- If you include the package name with a `~n` then node will only install the lastest version of n instead of n+1.
+- `module.exports.warn = warn;` for reference.
+
+
+
 ## Level 5
 ## Level 6
 ## Level 7
