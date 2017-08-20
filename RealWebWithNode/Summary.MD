@@ -121,7 +121,33 @@ request.on('end', function(){
 - `render()` can be passed a json object 
 
 ## Level 6
-- 
+- This level is about Socket.io.
+- Web servers nowadays have web sockets.
+- Not all browsers have this capacity.
+- Since some don't, we'll need a fall back like Socket.io.
+```js
+var express = require('express');
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server); // what is this?
+
+io.on('connection', function(client){
+	console.log('Client connected... ');
+	client.emit('messages', {hello: "world"});
+});
+
+app.get('/', function( req, res){
+	res.sendFile( __dirname + "/index.html");
+});
+
+app.listen(8080);
+```
+- Make sure to includde the socket.io.js file in the html file.
+- As well as calling `var socket = io.connect('<server_address>');`
+- Inside the client side data, you can then call any responses from socket.io.
+- Socket.io has a broadcast category for emits.
+- `socket.broadcast.emit( 'messages', <messages>)`.
+- You can assign any variable
 
 
 ## Level 7
