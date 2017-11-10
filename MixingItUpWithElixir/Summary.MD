@@ -5,7 +5,7 @@
 ## Level 1
 - Functions are first class citizens
 - Which means:
-	1. Functins can be assigne to varibales
+	1. Functions can be assign to variables
 	2. Functions can be passed around to other arguments.
 - *Anonymous Functions* have no name and no module.
 - These are declared using `fn -> ....    end`.
@@ -40,7 +40,7 @@ deposit = &(&1 + &2)                                    # this.
 - The definition looks like `%{ "name" => "Brooke", "Age" = 49}`.
 - You can read maps with `Map.fetch()`.
 - If you call `Map.fetch!( map, 'key')` then you only get the value back.
-- if the key is not found then you get an explicit error message.
+- If the key is not found then you get an explicit error message.
 - Unlike tuples, we don't need to refer to elements we don't care about in a map.
 - You can imbed maps inside maps.
 

@@ -27,7 +27,7 @@ end
 ```
 - Elixer does not have a return call and uses the last line in a function instead.
 - Named functions are called using the dot notation.
-- You can write to the console using `IO.puts "stuf to dump"
+- You can write to the console using `IO.puts "stuff to dump"`
 - Elixer inserts a variable into a string using the format `#{variable_name}`.
 - In order to determine if a function is pure, we look for:
 	1. Return values must only depend on arguments it receives.

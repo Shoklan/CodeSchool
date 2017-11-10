@@ -118,7 +118,7 @@ request.on('end', function(){
 - `<% = %>` for print data.
 - `<% %>` for running code.
 - `res.render('template.ejs')` to render a template to a request.
-- `render()` can be passed a json object 
+- `render()` can be passed a json object
 
 ## Level 6
 - This level is about Socket.io.
@@ -142,7 +142,7 @@ app.get('/', function( req, res){
 
 app.listen(8080);
 ```
-- Make sure to includde the socket.io.js file in the html file.
+- Make sure to include the socket.io.js file in the html file.
 - As well as calling `var socket = io.connect('<server_address>');`
 - Inside the client side data, you can then call any responses from socket.io.
 - Socket.io has a broadcast category for emits.
