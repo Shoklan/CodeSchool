@@ -151,8 +151,31 @@ app.listen(8080);
 
 
 ## Level 7
+- This level is about persistant data.
+- To store messages, we could use a javascript array.
+- We then use a function to push the data onto the array.
+```js
+var storeMessages = function( name, data){
+	messages.push( { names: name, data: data});
+```
+- To install redis module use `npm install redis --save`.
+- You can talk to the redis server using `var client = redis.createClient();
+- Insert data using `client.set( <key>, <value>)
+- `client.ltrim("messages", 0, 1)` will only keep the first two strings.
+- `client.lrange( "messages", 0, -1, function(){...})` to retreive all messages.
+- `client.lpush("<set>", value, function(err, reply){...})` to insert a value into a list.
+- Sets are lists fo unique values.
+- You can add items to a set using `client.sadd( "<set_name>", "<item>")`.
+- You can also remove an item using `client.srem("<set_name>", "<item>")`.
+- Collect all the items in a set using client.smembers( "<set_name>", function( err, names){})`.
+- Send an update to all clients using `client.broadcast.emit(" add chatter", name)`.
+
+
 
 ## Research:
 - V8 Javascript Runtime
 - Gulp.js
 - Sinatra
+- Redis
+- StreamHandbook Node.
+- The little Redis book
