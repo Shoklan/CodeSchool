@@ -80,4 +80,13 @@ foreach( var item in Objects){}
 ```
 
 # Method Overloads
-- 
+- You can have two methods with the same name but different parameters.
+- This will cause the method with the matching set of parameters to be called instead.
+- A **Method Signature** is the method's name as well as its type.
+- **Decimal** is the name of the float data type in C#.
+- `<var>.StartsWith("<match>")` will return true is the string is found at the beginning.
+- `<var>.Split(" ")` to split `<var>` on spaces.
+- Pass an array using:
+```
+public void methodName(type[] varNames ){}
+```
