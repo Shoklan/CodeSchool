@@ -49,8 +49,15 @@ var model = new CharacterSheetApp.Models.Character();
 - And, change the data field to `@Model.Name`.
 
 # Getting User Input
-- 
-
-
+- To accept input, we will be:
+  1. Creating a form in View.
+  2. Add `Create()` method in *Controller*.
+  3. Move existing logic from `Index()` into `Create()`.
+- Add the form to *Index.cshtml*.
+- The input name on the view will also match the accepted parameter in the Controller method.
+- To tell the form what action to take you use a **Tag Helper**.
+- This is added to the *<form>* field like `<form asp-action="Create">`.
+- You can also define the *Controller* you want to access using `asp-controller="Home"`.
 
 # Retaining Data
+- 
