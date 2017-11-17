@@ -60,4 +60,14 @@ var model = new CharacterSheetApp.Models.Character();
 - You can also define the *Controller* you want to access using `asp-controller="Home"`.
 
 # Retaining Data
-- 
+- We could use an array but we're going to use a list instead.
+- To pass a list instead, you'll use `@model List<CharacterSheetApp.Models.Character>`.
+- We could use a `foreach()` loop to access each item.
+- To do that, you would lead your code with `@` to tell ASP.NET that it's code here.
+- We're going to use Global Variables but you shouldn't do this.
+- To make sure only one instance exists use `static`.
+- I remember how *using directives* work.
+- Since the method is static, we can call it without instantiating it.
+- We're going to use a `return RedirectToAction("Index")` which does exactly what it says.
+- Make sure to check for *Nulls*.
+- You can set a field or variable to a *property* using `public static List<Character> Characters{ get; set;}`.
