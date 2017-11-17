@@ -26,9 +26,18 @@
 - There are *15* different built in data types.
 - We can convert a string to an integer use the `int.Parse()` method.
 
-# 
-
-
+# Changing the Flow of Our Application
+- When a user enters something we didn't expect, then we get an error.
+- To handle this, we can use `int.TryParse()` instead.
+- Some methods having something called an *output parameter* which is not that common.
+- `int.TryParse()` happens to have one.
+```
+int.TryParse( Console.ReadLine(), out numberOfMembers)
+```
+- We're going to use the `if(){}` block to test.
+- `!` is the unary operator for logical not.
+- We can tell the program to exit with successful completion using `Environment.Exit(0)`.
+- I know what the `if-else` blocks are.
 
 # Reference:
 - [Install C#](www.go.codeschool.com/install-dot-net)
