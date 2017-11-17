@@ -55,7 +55,7 @@ using System;
 ```
 List<Class> <array_name> = new List<Class>();
 ```
-- You add to lists using `list_name.add{ <initialized_object_here}`.
+- You add to lists using `list_name.Add{ <initialized_object_here }`.
 - To use lists we'll need to include `using System.Collections.Generic;`
 - If you don't want to deal with types, then `var` will try and guess it.
 - **Null** is the absence of a value; not an empty value.
@@ -65,7 +65,7 @@ public List<class_name> <instance_name> = new List<class_name>();
 ```
 
 # Loops
--
+- 
 
 
 # Method Overloads
