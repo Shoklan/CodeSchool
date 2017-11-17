@@ -65,8 +65,19 @@ public List<class_name> <instance_name> = new List<class_name>();
 ```
 
 # Loops
-- 
-
+- A **While Loop** will continue until the *break* keyword is used or the condition is false.
+- Format:
+```
+while( <var> ){
+  // do stuff here
+}
+```
+- If you there is no condition to escape the loop, then you have an *infinite loop*.
+- `break` will immediately exit the loop.
+- A **Foreach Loop** will iterate through each object and run code for each one.
+```
+foreach( var item in Objects){}
+```
 
 # Method Overloads
--
+- 
