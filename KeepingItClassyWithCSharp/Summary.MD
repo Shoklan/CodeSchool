@@ -37,8 +37,32 @@ using System;
 - The default mode is private.
 
 # Groups of Objects
-- 
-
+- The **Object Initializer** allows us to declare and initialize the objects variables in a single line.
+```
+<Class> <instance_name> = new <Class_name>{ <arg1> = <par1>, <arg2> = <par2>};
+```
+- There are several ways to group objects, but we're only going to cover two:
+  1. Arrays
+  2. Lists
+- To initialize an array of type object, use:
+```
+<Class>[] <array_name> = new <Class_name>[<n>];
+```
+- It uses normal array indexing.
+- *Arrays* are of a fixed size.
+- *Lists* are better when we don't know how many objects there will be.
+- To initialize a list, use:
+```
+List<Class> <array_name> = new List<Class>();
+```
+- You add to lists using `list_name.add{ <initialized_object_here}`.
+- To use lists we'll need to include `using System.Collections.Generic;`
+- If you don't want to deal with types, then `var` will try and guess it.
+- **Null** is the absence of a value; not an empty value.
+- We can make sure that the initialized list is empty but is still a list.
+```
+public List<class_name> <instance_name> = new List<class_name>();
+```
 
 # Loops
 -
