@@ -24,9 +24,9 @@
 - The declaration requires the *datatype* of the variable and then the *name* of it.
 - **=** is the *assignment operator* as per normal.
 - There are *15* different built in data types.
+- We can convert a string to an integer use the `int.Parse()` method.
 
-
-
+# 
 
 
 
