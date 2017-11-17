@@ -69,8 +69,26 @@ public IActionResult GetActive(){
 - To remove, you use `_context.Characters.Remove( <whatever_model> )`.
 
 # Showing Off Your Data
+- Before we can implement the data structure, we need to plan it out.
+- A database manages a *many-to-many* relationship is with a **Union Table**.
+- All we need to really do is add a property list of the equipment to our character class.
+```
+public List<Character> Characters { get; set;}
+```
+- Now we're going to manage our views:
+  1. Index.cshtml
+  2. Create.cshtml
+- To manage links, you include `asp-action="<Action> asp-controller="<Class>" ` to the *<a>* elements.
+- To control passing inputs to the Controller, you use `asp-route-name="@item.name"` in the *<a>* element.
+- This will add a query string to the url when it is clicked.
+- On the recieving page, you'd tag the variable in `asp-for="Name"` in both label and input.
+- To start using **Data Annotations** you'd need `using System.ComponentModel.DataAnnotations;` in the class file.
+- Then, in the class definition you'd use `[Display(Name = "Is Active")]` after setting the properties.
 
 # Making Our Presentation Smarter
+- 
+
+
 
 # Creating Logical URLs
 
