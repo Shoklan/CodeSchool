@@ -1,7 +1,7 @@
 # Real Time Web With Node
 
 ## Level 1
-- Node allows you to build scalable Netowrk Applications using Javascript on the server side.
+- Node allows you to build scalable Network Applications using Javascript on the server side.
 - Node is a wrapper around the V8 Javascript Runtime.
 - Node is all written in C.
 - Types of servers you could build:
@@ -26,7 +26,7 @@ var contents = fs.readFileSync('target/file', function( err, contents){
 - Node uses what is called the *Event Loop* to continue checking for requests.
 - Most other languages require blocks; this is, in Python, called the *Mutex Lock*.
 - `readFileSync()` is blocking; `readFile()` is non-blocking.
-- Issueing commands in node using `node`.
+- Issuing commands in node using `node`.
 - `writeHead()` can do more than send the 200 code.
 - `response.end()` can also return a string response.
 
@@ -60,7 +60,7 @@ var server = http.createServer(); server.on('request', function( request, respon
 	2. Writable.
 - ReadableStream inherits from EventEmitter.
 ```js
-request.on( 'reabale', function(){
+request.on( 'readabale', function(){
 	var chunk = null;
 	while( null !== (chunk = request.read())){
 		console.log(chunk.toString());
@@ -151,10 +151,10 @@ app.listen(8080);
 
 
 ## Level 7
-- This level is about persistant data.
-- To store messages, we could use a javascript array.
+- This level is about persistent data.
+- To store messages, we could use a JavaScript array.
 - We then use a function to push the data onto the array.
-```js
+```
 var storeMessages = function( name, data){
 	messages.push( { names: name, data: data});
 ```
