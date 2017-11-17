@@ -86,10 +86,38 @@ public List<Character> Characters { get; set;}
 - Then, in the class definition you'd use `[Display(Name = "Is Active")]` after setting the properties.
 
 # Making Our Presentation Smarter
-- 
-
-
+- The **_Layout.cshtml** file is found in Views > Shared and controls the layout of the app.
+- The App knows which views to use since they're defined in **_ViewStart.cshtml**.
+- Inside the *_Layout.cshtml* file:
+  * `@ViewData["Title"]` is a dictionary that allows us to pass data from the view to the model.
+  * `@RenderSection("header", required: false)` means to insert the header file info here but you don't have to.
+  * `@RenderBody()` is where most of our changes have been inserted.
+- We can change `@ViewData` as if it's a variable in the Controller file.
+- For `@RenderHeader` that is inserted in *Index.cshtml*.
+```
+@section_header{
+  <meta name ...
+}
+```
+- Everything inside the braces will get inserted.
+- Naming nomenclature is *_PascalCase* for those files.
+- Layouts typically go in the *Shared* folder.
+- Sections names should be all lower case.
+- Don't include info that is only in some pages.
+- We can creat what are called **Partials** and share those between pages.
+- It's just basically another view.
+- We'll then define the partial at the top using `@Html.Partial("_CharacterSheet", Model)`.
+- You can place the partials in either the shared folder or organized by model.
+- `@Html.EditorForModel()` insert the correct fields and labels based on the model passed.
+- You can override parts of the templates to make them visually better.
+- To do this, you need an **EditorTemplates** folder in the *Shared* folder.
+- The subfiles are named after the types that could be passed:
+  + *Boolean.cshtml*
+  + *Int32.cshtml*
+  + etc.
 
 # Creating Logical URLs
+- 
+
 
 # Validating Our Input
