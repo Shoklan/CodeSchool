@@ -50,8 +50,19 @@
 - This sort of works kind of like z axis marked elements.
 
 # Aligning Alibis
+- Flex items are also aligned on the **Cross Axis**.
+- Property `align-items` is used to distribute space on the *cross axis*.
+- It has the values:
+  1. stretch
+  2. flex-start
+  3. flex-end
+  4. center
+  5. baseline
 
 # Sizing Up the Properties
+- 
+
+
 
 # Property Plotting
 
