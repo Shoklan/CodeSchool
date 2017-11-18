@@ -185,8 +185,45 @@ export default Ember.Route.extend({
 ```
 
 # Actions
-- 
-
-
+- Actions are how we do things with Ember.
+- `=>` is for anonymous functions.
+```js
+newOrder(){
+  return Order.create({
+    items: products.map((product) => {
+      return LineItem.create({
+        product: product
+        });
+      });
+    });
+}
+```
+- In the routes file we initialize a new order:
+```js
+const store = this.get('store');
+return store.newOrder();
+```
+- Ember provides an `{{input}}` helper.
+- To use it `{{ input type="text" id="name" value = model.namee}}`
+- **Actions** allow you to map DOM events to specific applications.
+- The format is `{{action "actionName" on="eventName"}}`.
+- This is just inserted right into the the `<form ` element.
+- Also, `{{action "createOrder" model on="submit"}}`.
+- Now you create an actions block inside *routes/orders/index.js*.
+```js
+actions: {
+  createOrder(order){
+    const name = order.get('name');
+    alert( name + ' order saved!');
+  }
+}
+```
+- *routes* also have a `transitionTo` function.
+```js
+this.get('store').saveOrder(order);
+this.transitionTo('orders.order', order);
+```
+- `orders.pushObject()` is similar to `push()` but also alerts others about the change.
+- `lineItem.incrementProperty()` is a function to implement the variable by an amount.
 
 # Properties and Components
