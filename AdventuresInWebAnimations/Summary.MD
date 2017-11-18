@@ -85,7 +85,21 @@
 - `:focus` is an important selector to keep in mind.
 
 # Keyframes
-- 
+- **Keyframes** are a list of what should happen over the course of the animation.
+- There are two parts:
+  1. Create the animation.
+  2. Assign the animation.
+- Formula:
+```css
+@keyframes <name-animation> {
+  <step 1> {<property>: <value>;}
+  <step 2> {<property>: <value>;}
+  }
+```
+- Make sure each piece is separate.
+- You'll tag each id with `#left-arm{ animation: swing 2s 0 infinite ease;}`.
+- *Duration must come before delay.*
+- Don't forget about `transform-origin: top center;`.
 
 
 # SVG
