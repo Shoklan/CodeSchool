@@ -60,9 +60,19 @@
   5. baseline
 
 # Sizing Up the Properties
-- 
-
-
+- Worth noting: overriding Chromes `min-width: 0;` to fix compatability issues.
+- The property `flex-grow` is used to specify the ratio of the space and item should fill in the main axis.
+- If we set it to 0 then it wont grow.
+- If we set it to 1 then it will fill all the space available.
+- The ratio has to account for the elemens internal to it; don't depend on it too much.
+- The property `flex-shrink` will control how much an item is willing to scale down to fit.
+- If we set it to 0 then it wont shrink.
+- The property `flex-basis` can be used to set the initial size of a flex item.
+- It can take the units:
+  1. percent.
+  2. px
+  3. em
+  4. rem
 
 # Property Plotting
 
