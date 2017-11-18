@@ -84,10 +84,109 @@ Router.map( function(){
 - Routes only pass the model to each page.
 
 # Models and services
+- To centralize data, we use something called a **Service**.
+- An **Ember Service** is a long living object that all your application has access to.
+- This is also sometimes called a **Singleton**.
+- To create one, you use `ember generate service <service_name>`.
+- These are stored in the folder *Services*.
+- After moving the function containing the data to the store, you need to include the store in the route: `store: Ember.inject.service('store')`.
+- Inside the model:
+```
+model(){
+  const store = this.get('store');
+  return store.getOrders();
+},
+```
+- Then, you write getters to access the data.
+- You build the models in *app/models/products.js*.
+- You include `export default Ember.Object.extend({})`.
+- We extend object becuase:
+  1. It's a consistent interface for creating and destroying records.
+  2. Object lifecycle events and hooks.
+  3. Properties and property observation functionality.
+- To create a new record, you use:
+```js
+var product = Product.create({
+  title: 'Sleeping Bag'
+  });
+```
+
+- You use `get()` and `set()` to alter records.
+- You can import those models with a relative path, but you shouldn't.
+- Instead, you should use absolute paths such as `import Order from '<app_name>/models/order';`.
+- When you start include other files:
+  * app/public/assets/images
+  * app/sytles/app.css
+- Don't forget `import Ember from 'ember';`
+
+```js
+// app/services/store.js
+import Ember from 'ember';
+import Option from 'quiz/models/option';
+import Poll from 'quiz/models/poll';
+
+const polls = [
+  Poll.create({
+    id: '1',
+    options: [
+      Option.create({ id: '1', value: 'Nightshade' }),
+      Option.create({ id: '2', value: 'Hemlock' }),
+      Option.create({ id: '3', value: 'Rhubarb' }),
+    ],
+    question: 'Which Poisonous Plant Are You?'
+  }),
+
+  Poll.create({
+    id: '2',
+    options: [
+      Option.create({ id: '4', value: 'Honesty' }),
+      Option.create({ id: '5', value: 'Integrity' }),
+      Option.create({ id: '6', value: 'Patience' }),
+    ],
+    question: 'Which Is Your Favorite Woodland Wanderer Way?'
+  })
+];
+
+export default Ember.Service.extend({
+  getPollById(id) {
+    return this.getPolls().findBy('id', id);
+  },
+
+  getPolls() {
+    return polls;
+  }
+});
+```
+
+```js
+// app/routes/polls.
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  model() {
+    return this.get('store').getPolls();
+  },
+
+  store: Ember.inject.service()
+});
+```
+
+```js
+// app/routes/polls/poll.js
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  model(params) {
+    return this.get('store').getPollById(params.poll_id);
+  },
+
+  store: Ember.inject.service()
+});
+```
+
+# Actions
 - 
 
 
-
-# Actions
 
 # Properties and Components
