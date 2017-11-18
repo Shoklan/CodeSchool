@@ -117,7 +117,15 @@ public List<Character> Characters { get; set;}
   + etc.
 
 # Creating Logical URLs
-- 
+- We can use custom routes to make urls easier to remember.
+- Ther are two places where the custom routes are set up:
+  1. *Startup.cs*
+  2. Specific Actions.
+- To do this in specific cases, you navigate to the Controller file and `[Route("Character/{name}/Details")]`.
+- This gets put into the class but above actions.
+- **GET*** and **POST** are examples of **HTTP Verbs**
+- You can force a Controller to only accept one using `[HttpGet]` or `[HttPost]`.
+- **Http DELETE** exists but most browswer don't use it.
 
 
 # Validating Our Input
