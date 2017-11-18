@@ -13,7 +13,7 @@
 - The fastest transition a human eye can handle is .2565.
 - You can chain trainsitions using a comma: `background-color .4s, color .4s;`.
 - You can also just add `all` but that will transition every property that is able.
-- There is actually four values to the full formula: `trainsition: <property> <duration> <timing-functinon> <delay>;`.
+- There is actually four values to the full formula: `trainsition: <property> <duration> <timing-function> <delay>;`.
 - **Vendor Prefixes** include:
   * -webkit-transition: ...
   * -moz-transition: ...
@@ -64,8 +64,29 @@
 
 
 # Transforms
+- **CSS Transforms** let you modify elements in their coordinate space.
+- Rotation is as simple as `.modal-close:hover{ transform: rotate(360deg);}`.
+- Don't forget to tag the original element with the `transition` element.
+- The full list of timing functions:
+  1. ease
+  2. linear
+  3. ease-in
+  4. ease-out
+  5. initial
+  6. inherit
+  7. ease-in-out
+  8. cubic-bezier
+- `.form-input + .form-label` for future reference.
+- `+` is called the **Adjacent Selector**.
+- **Scale** is used to stretch an element basedon the vlaue multiplier.
+- To do that, `transform: scale( 2, 1 )`.
+- You can adjust where the element scales to using `transform-origin: center left;`.
+- To simply move an element independent of all other elements use `transform: translateX(<n>px);`.
+- `:focus` is an important selector to keep in mind.
 
 # Keyframes
+- 
+
 
 # SVG
 
