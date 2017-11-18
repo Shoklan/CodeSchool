@@ -75,6 +75,25 @@
   4. rem
 
 # Property Plotting
+- The property `align-self` is used to override the items parent settings.
+- It accepts the values:
+   1. stretch
+   2. flex-start
+   3. flex-end
+   4. center
+   5. baseline
+- A simple way to center and max is `flex-wrap: center; flex-basis: 100%;`.
+- `align-items` does not control wrapped items.
+- The property `align-content` is used to align wrapped flex items.
+- It accepts the values:
+  1. flex-start
+  2. flex-end
+  3. center
+  4. space-between
+  5. space-around
+- The property for flex shorthand is `flex: <grow> <shrink> <basis>;`.
+- If you **REALLY** need to support Internet Explorer, then don't use the shorthand.
+- The property `flex-flow: <direction> <wrap>;` is used for shorthand direction setting.
 
 ## Reference:
 - [Flexbox Spec](http://go.codeschool.com/flebox-spec)
