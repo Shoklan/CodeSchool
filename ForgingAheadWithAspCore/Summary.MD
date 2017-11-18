@@ -127,5 +127,26 @@ public List<Character> Characters { get; set;}
 - You can force a Controller to only accept one using `[HttpGet]` or `[HttPost]`.
 - **Http DELETE** exists but most browswer don't use it.
 
-
 # Validating Our Input
+- You can mark fields are `[Required]` in the Controller.
+- To include annotations, we're going to need `using System.ComponentModel.DataAnnotations;`.
+- You can mark a field as the primary key using `[Key]`.
+- You can force a length constraint using `[MinLength(<n>)]`.
+- You can set a limited range of accepted numbers using `[Range(1,18)]`
+- Front End Validation is the fastest and most convenient.
+- We're going to be using *JQuery-validation* and *JQuery-validation-unobtrusive*
+- We just needed to add the references in the layout.
+- To display this, we need to add `<div asp-validation-summary="All"></div>` to the input View.
+- The name for backend validation is **ModelState Validation**.
+- The *Modelstate* is a property that tracks the data submitted to the server.
+```
+if(!ModelState.IsValid)
+  return View(character);
+```
+- If you leave the name check until it hits the database, then you get a blank page on the redirect.
+```
+if(_context.Characters.Any( e => e.Name == character.Name))
+  ModelState.AddModelError("Name", "Name is already taken.");
+```
+- The error messsages passed back are pretty useless when you have lots of fields.
+- You can solve this by using `[Required(ErrorMessage = "The attribute field is required")]` in the Models file.
