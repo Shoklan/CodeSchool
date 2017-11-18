@@ -227,3 +227,26 @@ this.transitionTo('orders.order', order);
 - `lineItem.incrementProperty()` is a function to implement the variable by an amount.
 
 # Properties and Components
+- **The Law off Demeter**: the principle of least knowledge.
+- **Computed Properties** are cached properties.
+- To use them, use:
+```js
+title: Ember.computer('product.title', function(){
+    return this.get('product.title');
+  })
+```
+- Since this is common, Ember comes with about 30 pre-computed ones.
+- An example: `title: Ember.computed.alias('product.title')`.
+- You can do this for more complicated variables too:
+```js
+price: Ember.computed('quanitity', 'unitPrice', function(){
+  return parseInt( this.get('quantity'), 10) * this.get('unitPrice');
+}),
+```
+- `itemPrices: Ember.computed.mapBy('items', 'price')` to create an array of the cost per each items.
+- `price: Ember.computed.sum( 'itemPrices')` to sum all the prices for the order.
+- **Components** are a reusable way to combine a template with action handling and behavior.
+- To create one use `ember generate component <component_name>`.
+- *Components* must have a hyphen in their name.
+- *Handlebars* allows you to conditionally change formatting.
+- `{{if isImportant 'important'}}`.
