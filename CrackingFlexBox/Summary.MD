@@ -37,8 +37,17 @@
 - These will override the normal settings.
 
 # Justification and Order
-- 
-
+- Flex items are distributed along flex axis.
+- The main axis is determined by `flex-direction`.
+- You can control the side items justify to using `justify-content`.
+- It has the values:
+  1. `flex-start`
+  2. `flex-end`
+  3. `space-between`
+  4. `space-around`
+  5. `center`; default
+- The `order` property is used to determine the order of flex items along the main axis.
+- This sort of works kind of like z axis marked elements.
 
 # Aligning Alibis
 
