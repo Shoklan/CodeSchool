@@ -125,3 +125,7 @@ componentDidMount(){
 - `..` is called the **Spread Operator**.
 - Always check to make sure a user wants to delete data.
 - **One-Way Control Flow** is when you force changes from a higher level component to a lower level component.
+
+
+## Reference:
+- [egghead.io](http://egghead.io)
