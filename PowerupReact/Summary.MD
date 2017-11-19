@@ -54,10 +54,38 @@ class StoryBox extends React.Component{
 - `<img src={this.props.avatarUrl} alt={`${this.props.author}'s picture`} />`
 
 # Component State
-- 
+- To implement the hide/show comments problem, there are to methods:
+  1. Direct DOM manipulation.
+  2. Indirect DOM manipulation.
+-  The **State** is a Javascript object that lives inside each component.
+- You can access it using `this.state`.
+- For this, we'll define `let commentNodes;` to be a variable to hold `<div className="comment-list">...`.
+- For this to work, we'll need to create a class constructor:
+```js
+constructor(){
+  super();
 
-
+  this.state = {
+    showComments: false
+  };
+}
+```
+- Just like other languages, the first thing that *must* be called in the constructor is `super()`.
+- To change this, use `this.setState( {showComments: true})`.
+- You'll also want to define the text to be changed inside the render function as well.
+- *State* is vital to managing and building React apps.
+```js
+_toggleAbuse(event){
+    event.preventDefault();
+    this.setState({
+      isAbusive: !this.state.isAbusive
+    });
+  }
+```
+- `<a href="#" onClick={this._toggleAbuse.bind(this)}>Report as Abuse</a>`.
 
 # Sythentic Events
+-
+
 
 # Talking to Remote Servers
