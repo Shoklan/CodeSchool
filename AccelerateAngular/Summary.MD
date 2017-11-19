@@ -88,10 +88,46 @@ totalCost(){
 ```
 
 # Tuning It Up
+- We're going to split up the *main.ts* file into three parts:
+  1. *main.ts*; only bootstrap and loading components.
+  2. *app.component.ts* is where out page headers will be.
+  3. *car-parts.components.ts* which will contain the data.
+- To access the components you'll want to `export class AppComponents`.
+- Then, we'll `import { AppComponents } from './app.component';`.
+- The names in each file MUST BE THE SAME.
+- When you import parts that are the the main AppComponent, make sure to add them as dependecies in `@NgModule`.
+- This will give us access to `<car-parts></car-parts>` selector.
+- To include css styles, we'll add `class="<style_identity>"`.
+- Then, add them as a list:
+```
+styles: [`
+  .description{
+    //...
+    }
+  .price{
+    //...
+  }
+    `]
+```
+- But, as we know, this all should be separate:
+  * car-parts.component.html
+  * car-parts.component.css
+- Then, you tell it where those files are using `templateUrl : 'app/car-parts.component.html'` and `styelUrls: ['app/car-parts.component.css']`.
+- We can now use *car-part.ts* to contain the template model for data.
+- Make sure to export it!
+```
+export class carPartsComponent{
+  carParts: CarPart[] ][{...}]
+}
+```
+- *mocks.ts* is used to create *mock* data for testing.
+- Instead of using a constructor, we'll use  `ngOnInit(){ this.carParts = CARPARTS;}`.
+- `export const RACES: Race[] =`.
+
+# Data Binding Boost
 - 
 
 
-# Data Binding Boost
 
 # Service Fuel Injection
 
