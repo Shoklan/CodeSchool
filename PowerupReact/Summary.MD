@@ -85,7 +85,19 @@ _toggleAbuse(event){
 - `<a href="#" onClick={this._toggleAbuse.bind(this)}>Report as Abuse</a>`.
 
 # Sythentic Events
--
-
+- To add an event listener we will use the `onSubmit` handler.
+- `onSubmit={this._handleSubmit.bind(this)}`.
+- If you don't add `.bind(this)` then it will not work due to being in a different context.
+- **Refs** allow us to assign form values to properties on the component object.
+- Example: `ref={(input) => this._author = input}`.
+- React runs ref callbacks on render.
+- You'll then assign the callback values to local values in the handler function: `let author = this._author`.
+- To post the data, you'll use `this.props._addComment( author.value, body.value )`.
+- Functions in Javascript are first class citizens.
+- We use `concat()` instead of `push()` because it updates the array instead of returning a copy with the new value added.
+- Due to this, you'll want the comments array in the constructor.
+- To make sure events are consistent across all browsers, React wraps browsers native events into **Synthetic Events**.
+- `onKeyUp={this._getCharacterCount.bind(this)}`.
 
 # Talking to Remote Servers
+- 
