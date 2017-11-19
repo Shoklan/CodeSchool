@@ -23,10 +23,11 @@ app.listen(3000);
 - You can mix and match Node and Express functions since Express inherits from Node.js.
 - If you pass a string the the `send()` function then it changes the header to represent text/html automatically.
 - You can redirect after conneection using `response.redirect('<url_or_dir>')`.
-- 
-
+- We can use the 301 status code to tell the browser that this is permenant.
 
 # Middleware
+- 
+
 
 # User Params
 
