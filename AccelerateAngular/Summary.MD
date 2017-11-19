@@ -144,8 +144,46 @@ export class carPartsComponent{
 - This can only be applied to data bound properties.
 
 # Service Fuel Injection
--
+- **Services** are used to organize and share code across your apps as well as create our data access models.
+- We're going to use the file *racing-data.service.ts*.
+- When you run an Angular Application, it creates a **Dependency Injector** which is in charge of knowing how to create and send things.
+- To implement one:
+  1. Add the injectable decorator to RacingDataService.
+  2. Let our Injector know about the service.
+  3. Inject it.
+- To imort the injector: `import { Injectable } from '@angular/core';`.
+- Place `@Injectable()` above the block.
+- In *main.ts*, we're going to add `providers: RacingDataService` inside `@NgModule`.
+- Inside *car-parts.components.ts* we're going to add `constructor( private racingDataService: RacingDataService){}`.
+- Then, insde `ngOnInit(){ this.carParts = this.racingDataService.getCarParts();}`.
+- We're going to request the data inside the service file.
+- To use HTTP:
+  1. Create a JSON file with car parts: *car-parts.json*
+  2. Ensure it has libraries needed for http calls
+  3. Tell the injector about the http provider.
+  4. Inject the http dependency into service and make http get request.
+  5. Listen for data returned by this request.
+- We're going to be using **RxJS**, or Reactive Extentions JS.
+- In *main.ts* we're going to `import {HttpModule} from '@angular/http';`.
+- Then, add it to the list of imports.
+- In *racing-data.service.ts* we'll `import { Http } from '@angular/http';`.
+- In *racing-data.service.ts* we'll `import 'rxjs/add/operator/map';`.
+- Build a constructor: `constructor( private http: Http){}`
+- A couple final points:
+  1. Make sure to add error handling.
+  2. Go learn about **Observables**.
+```
+@Injectable()
+export class RaceService {
 
+  constructor(private http: Http){}
+
+  getRaces() {
+    return this.http.get('app/races.json')
+  .map(response => <Race[]> response.json().racesData);
+  }
+}
+```
 
 
 ## Reference:
