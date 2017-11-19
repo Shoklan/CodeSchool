@@ -26,13 +26,33 @@ app.listen(3000);
 - We can use the 301 status code to tell the browser that this is permenant.
 
 # Middleware
-- 
-
+- We'll place our *index.html* file in the folder */public/index.html*.
+- To return this file, we'll use `response.sendFile(__dirname + '/public/index.html');`
+- `__dirname` means *current directory*.
+- You can mount midddleware using `app.use(express.static('public'))`.
+- This will cause our application to serve *index.html* be default.
+- **Middleware** are functions executed sequentially that access request and response.
+- This allows us to process what came in in a step-by-step fashion.
+- You pass things down the middleware pipe via `app.use( function( request, response, next){ ...; next();})`.
+  * Where next must be called to continue down the pipe.
+- Everything inside the public folder will be served.
+- You can then serve the JS files to communicate back to the server for AJAX.
+- To create a custom *middleware* we create a new file with an appropriate name: *logger.js*.
+- To export a function outside of the program use `module.exports = function( request, response, next){};.`
+- `var start = +new Date();`; `+new` converts into linux epoch time.
+- You can gain access to the standard out using `var stream = process.stdout;`.
+- You can tell something is a local module when it's of the form `./logger`.
 
 # User Params
+- 
+
 
 # Body Parser
 
 # Refactoring Routes
 
 ## Reference:
+
+## Research:
+- Morgan Node Project?
+-
