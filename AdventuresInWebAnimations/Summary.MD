@@ -107,7 +107,6 @@
 - What is a **Cubic-Bezier**>
 - It's a curve that tells you how fast something changes over time.
 - All timing functions are *cubic-bezier* functions that are well defined.
-- 
 
 # SVG
 
