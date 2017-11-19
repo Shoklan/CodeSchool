@@ -109,6 +109,15 @@
 - All timing functions are *cubic-bezier* functions that are well defined.
 
 # SVG
+- There are lots of animation that are simply impossible without SVG.
+- You can create SVGs in *Adobe Illustrator*.
+- The parts of an SVG contain ids you can reference.
+- You can insert SVGs in place of PNGs in html.
+- SVGs, or Scalable Vector Graphics - can be scaled to any size.
+- You can check the full list of svg properties [here](http://go.codeschool.com/svg-css-properties).
+
+
 
 ## References:
 - [CanIUse](www.caniuse.com)
+- [SVG Properties](http://go.codeschool.com/svg-css-properties)
