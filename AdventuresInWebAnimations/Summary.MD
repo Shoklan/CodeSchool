@@ -116,8 +116,11 @@
 - SVGs, or Scalable Vector Graphics - can be scaled to any size.
 - You can check the full list of svg properties [here](http://go.codeschool.com/svg-css-properties).
 
-
-
 ## References:
 - [CanIUse](www.caniuse.com)
 - [SVG Properties](http://go.codeschool.com/svg-css-properties)
+
+## Research:
+- [CSS-Tricks](http://CSS-tricks.com)
+- [Cubic-Bezier](http://cubic-bezier.com)
+- [pleease](http://pleeease.io)
