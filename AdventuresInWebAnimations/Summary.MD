@@ -100,7 +100,14 @@
 - You'll tag each id with `#left-arm{ animation: swing 2s 0 infinite ease;}`.
 - *Duration must come before delay.*
 - Don't forget about `transform-origin: top center;`.
-
+- To make animations smoother, you simply add more steps.
+- You can condense duplicate values in *keyframes* and put them on one line.
+- The default **Fill Mode** is none.
+- To keep it up, you'd use `forwards` instead.
+- What is a **Cubic-Bezier**>
+- It's a curve that tells you how fast something changes over time.
+- All timing functions are *cubic-bezier* functions that are well defined.
+- 
 
 # SVG
 
