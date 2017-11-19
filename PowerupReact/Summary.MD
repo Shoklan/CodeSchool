@@ -38,10 +38,25 @@ class StoryBox extends React.Component{
 - You can use `topicsList.map( topic => <li>{topic}</li>)`.
 
 # Talk Through Props
+- There is a distinct pattern to be followed everytime:
+  1. Create a new class.
+  2. Inherit from React.Component
+  3. Return JSX from render.
+- When building components, start from the smallest component and work your way up.
+- This is because you can include the earlier components in the larger ones.
+- The arguments to Components in *React* are called props.
+- These look just like attribute, value pairs: `author = Phillip Moriarty`.
+- You read the props sent from a larger component to a smaller component using `this.props.<value>`.
+- Don't forget that `<Comment />` is how you add a Component into other Components.
+- It is proper nomenclature to precede a custom function written with _ .
+- We can iterate through a list using `commentList.map( (comment) => { return( <Comment author={comment.author} body = {comment.body} key={comment.id} )})`;
+- The key is to help React keep track of unique comments.
+- `<img src={this.props.avatarUrl} alt={`${this.props.author}'s picture`} />`
+
+# Component State
 - 
 
 
-# Component State
 
 # Sythentic Events
 
