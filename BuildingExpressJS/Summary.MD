@@ -44,6 +44,16 @@ app.listen(3000);
 - You can tell something is a local module when it's of the form `./logger`.
 
 # User Params
+- **Query Strings** are a great way to limit the number of results returned from an end point.
+- The query strings come in after `?` in the url request.
+- You can access the queries using `request.query.<name>`.
+- We can use **Meaningful Urls** to return the description for specific types of blocks.
+- **Dynamic Routes** are placeholders that can be used to name arguement parts of the url path.
+- The formula looks like `'/blocks/:name'`.
+- These will be added as `request.params.name`.
+- The proper way to deal with requests for objects that don't exists is to return a 404 status code.
+- A response for something that does not exist generates a response of `undefined` in Javascript.
+- To respond correctly, use `response.status(404).json('Error Messages here!')`.
 - 
 
 
