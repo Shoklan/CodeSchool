@@ -61,10 +61,35 @@ platformBrowserDynamic().
 - Instead of using single quotes though we'll be using backticks; this is going to make documenting hell.
 
 # Template Traction
-- 
-
+- A **Directive** is how we add dynamic behavior to html.
+- There are three kinds:
+  1. Component Directives.
+  2. Structural Directives.
+  3. Attribute Directives.
+- We create an iterator using `*ngFor="let carPart of carParts"`.
+- A **Structural Directive** alters the layout by adding, removing or replacing html elements.
+- You check if something is true using `<p *ngIf="carPart.inStock > 0">{{ carPart.inStock}} in Stock</p>`.
+- We use **Pipes** to format.
+- Example: `carPart | uppercase`; this is similar to filters in handlebars.
+- To format currency, we use  ISO 4217; USD, EUR, CAD.
+- You use it with `data.price | curreny:'EUR'`.
+- You can chain options to add more: `data.price | curreny:'EUR:true'` will use the symbol for Euro.
+- You can also just call methods using `{{totalCarparts()}}`.
+- `of` is not the new `as` or `in` with ES2015.
+- **BONUS**: `totalCarParts(){ return this.carParts.reduce(( prev, current), => prev + current.inStock, 0)};`.
+```
+totalCost(){
+    let sum = 0;
+    for( let race of this.races){
+      if( race.isRacing) sum += race.entryFee;
+    }
+    return sum;
+  }
+```
 
 # Tuning It Up
+- 
+
 
 # Data Binding Boost
 
