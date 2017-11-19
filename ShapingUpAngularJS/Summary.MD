@@ -114,13 +114,36 @@ app.directive('productTitle', function(){
 - You need to also declare what the name of the controller will be using `controllerAs: 'panels'`.
 
 # Services
--
+- To better manage all this code, it's better to create a new module.
+- Now, make sure to update the *store* module to tell it that it depends on `store-products` module.
+- You're also want to include the new *products.js* file to the website.
+- Services extend the controller functionality.
+- Such as:
+  * Fetching JSON data
+  * Logging
+  * Filtering
+- All services start with a `$`.
+- `$http({method: 'GET', url: '/products.json'})` to use http and access the data.
+- Or, `$http.get( {'products.json', {apiKey: 'myApiKey' }})`.
+- Promises tell you about the status of a request.
+- Now we need to tell the Controller that we need the service.
+- Formula: `app.controller('SomeController', [ '$http', '$log', function( $http, $log){}])`.
+```js
+app.controller('StoreController', ['$http', function($http){
+    var store = this;
+    store.products = [];
+
+    $http.get('/store-products.json').success(function(data){
+        store.products = data;
+    });
+  }]);
+```
 
 
 ## Reference:
 - [Download Angular](http://angularjs.org)
 
-
 ## Research:
 - BehaviorDriven Development?
 - Test Driven Development?
+- [plnkr](http://plnkr.co) ?
