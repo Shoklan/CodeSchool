@@ -74,8 +74,17 @@ app.controller('TabController', function(){
 ```
 
 # Forms
--
-
+- `ng-model` binds the form element value to the property.
+- For example `ng-model="review.author"`.
+- You can have angular submit with `ng-submit="reviewCtrl.addReview(product)"`.
+- To use angular validation, you're going to want to turn off html validations.
+- Do this to include `novalidate` at the end of the form declaration.
+- We can also add what fields are required by adding `required` at the end of each inputs declaration.
+- You can debug a form using `{{<formName>.$valid}}`.
+- This also checks to see if an email address is valid.
+- You could include this in the `ng-submit` expression to prevent it from submiting without valid info.
+- Under the hood, Angular marks fields not touched yet with `ng-pristine ng-valid` but removes them once clicked.
+- You can create some CSS to simply highlight the field when the `ng-invalid` class exists.
 
 # Custom Directives
 
