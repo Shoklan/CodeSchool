@@ -125,11 +125,28 @@ export class carPartsComponent{
 - `export const RACES: Race[] =`.
 
 # Data Binding Boost
-- 
-
-
+- We can include a *css* directory and can import from there; might need to do some splitting.
+- We can also include an images folder too.
+- **Property Binding** allows us to glue component properties to DOM element properties.
+- `[src]`?
+- This tells Angular to set this DOM property to out component property.
+- And, if it is updated then Angular will auto update this value.
+- Expample: `<div [hidden]="!user.isAdmin">Secret</div>`.
+- **Class Property Binding** : `[class.featured]=carPart.featured` will enable the class css featured.
+- **Dont' bind to class!**
+- To start an event handler, we're define in *car-parts.components.ts* `upQuantity(carPart){carPart.quantity++}`
+- To catch that event client side, we'll use `(click)="upQuantity(carPart)"`.
+- We can also pass `showKey($event)`.
+- To go both ways, we can create a binding going both ways or...
+- In *main.ts* `import { FormsModule } from '@angular/forms';`.
+- Then, we just include `[(ngModel)]="carPart.quantity"`.
+- This is sometimes called **Banana-in-a-Box**.
+- This can only be applied to data bound properties.
 
 # Service Fuel Injection
+-
+
+
 
 ## Reference:
 - [Quick Start Guide](http://go.codeschool.com/angularstart).
