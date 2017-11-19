@@ -65,10 +65,26 @@ app.param('name', function(request, response, next){
 ```
 
 # Body Parser
-- 
-
+- To *POST* data we need a form in the *index.html* page.
+- We're going to interrupt when the submit button is clicked using `event.preventDefault()` in *client.js*.
+- The code `form.serialize()` converts form data into url encoded format.
+- To clear input after submitting, use `form.trigger('reset')`.
+- Parsing depends on a different middleware called `body-parser`.
+- You install this using `npm install body-parser`.
+- We then require it in the *app.js* file using `var bodyParser = require('body-parser');`.
+- To parse the input then, we use `bodyParser.urlencoded({ extended: false });`.
+- We then send this via `app.post( '/block', parseUrlEncoded, function( request, response){})`.
+- *Routes* can accept multiple handlers.
+- `var city = createCity( request.body.name, request.body.description );`.
+- You can request confirmation, and you should, using `confirm('Are you Sure?')`.
+- You can create a delete route using `app.delete()`.
+- You can delete it using `delete blocks[ request.blockName];`.
+- You can have Express auto send a response body using `response.sendStatus(200);`.
 
 # Refactoring Routes
+-
+
+
 
 ## Reference:
 
