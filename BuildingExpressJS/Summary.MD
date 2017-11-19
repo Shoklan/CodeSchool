@@ -48,16 +48,25 @@ app.listen(3000);
 - The query strings come in after `?` in the url request.
 - You can access the queries using `request.query.<name>`.
 - We can use **Meaningful Urls** to return the description for specific types of blocks.
-- **Dynamic Routes** are placeholders that can be used to name arguement parts of the url path.
+- **Dynamic Routes** are placeholders that can be used to name argument parts of the url path.
 - The formula looks like `'/blocks/:name'`.
 - These will be added as `request.params.name`.
 - The proper way to deal with requests for objects that don't exists is to return a 404 status code.
 - A response for something that does not exist generates a response of `undefined` in Javascript.
 - To respond correctly, use `response.status(404).json('Error Messages here!')`.
--
-
+- You should normalize input to ensure proper response.
+- The `app.param()` function maps placeholders to call back functions.
+- The `Objects.keys()` function returns the keys of the Javascript object.
+```js
+app.param('name', function(request, response, next){
+  request.cityName = parseCityName( request.params.name );
+  next();
+});
+```
 
 # Body Parser
+- 
+
 
 # Refactoring Routes
 
