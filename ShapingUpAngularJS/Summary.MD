@@ -87,8 +87,35 @@ app.controller('TabController', function(){
 - You can create some CSS to simply highlight the field when the `ng-invalid` class exists.
 
 # Custom Directives
+- Angular also supports snippets; I think of them as templates.
+- You then use `ng-include="'product-title.html'"`.
+- Don't overlook that there are double and single quotes here.
+- **Directives** allow you to write HTMLthat expresses the behavior of your application.
+- There are a few kinds of Custom Directives:
+ * Template-expanding Directives: define a custom tag or attribute to expand or replace.
+ * Expressing complex UI
+ * Calling events to event handlers
+ * Reusing common components
+- You define a directive using:
+```js
+app.directive('productTitle', function(){
+  return {
+    restrict: 'E' //type of directive
+    templateUrl: 'product-title.html'
+  };
+});
+```
+- Some browsers don't like self closing tags with custom elements.
+- The Attribute Directive uses `A` instead of `E`.
+- Angular allows you to write expressive HTML through Directives.
+- Don't forget to turn the `div` into the `<product-description>` instead.
+- The Attribute Directive, based on its name, does not need to change the `div`.
+- You can insert the controller into the directive using the `controller:` keyword.
+- You need to also declare what the name of the controller will be using `controllerAs: 'panels'`.
 
 # Services
+-
+
 
 ## Reference:
 - [Download Angular](http://angularjs.org)
