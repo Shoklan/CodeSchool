@@ -82,12 +82,24 @@ app.param('name', function(request, response, next){
 - You can have Express auto send a response body using `response.sendStatus(200);`.
 
 # Refactoring Routes
--
-
-
+- After everything we've been taught, now we're going to throw most of it out.
+- It's better to use `var blocksRoute = app.route('/blocks/')`.
+- Then, we can set `.get()` and `.post()` calls passed on the route.
+- Or, you could get rid of the `blocksRoute` variables and simply chain them with `.`'s.
+- You will still need to do the same for `app.route('/blocks/:name')`.
+- A single application with too many lines of code is the indication of **Code Smell**.
+- We can solve this by extraction routes to modules instead.
+- You `var blocks = require('./routes/blocks');`.
+- We then just call `app.use('/blocks', blocks)`.
+- Obviously, this means we need a *routes* folder.
+- Inside of the file, *blocks.js*, will need one to require Express and then declare `var router = express.Router();`.
+- Then, we need to export it with `module.exports = router;`.
+- Then, you migrate all the logic about *blocks route* to the file.
+- The last line before exporting should be `router.route('/');`.
+- Then, you just chain-call the `.get()` and `.post()` calls onto this.
+- The `.all( function(request, response, next))` route is used for all request on a given route.
 
 ## Reference:
 
 ## Research:
 - Morgan Node Project?
--
