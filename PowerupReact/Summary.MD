@@ -100,4 +100,28 @@ _toggleAbuse(event){
 - `onKeyUp={this._getCharacterCount.bind(this)}`.
 
 # Talking to Remote Servers
-- 
+- **Lifecycle Methods** are for communicating with remote servers.
+- These are methods in react that are called while the component is being rendered for the first time or about to be removed from the DOM.
+- To start, set the init state of `comments = []`.
+- Ajax requests will be done with JQuery.
+- The order of calls is:
+  1. constructor.
+  2. componentWillMount
+  3. render
+  4. componentDidMount
+  5. componentWillUnmount
+- **Mounting** means being rendered for the first time.
+- **Polling** is when periodically request to see if new comments have been added.
+```js
+componentDidMount(){
+    // check every 5 seconds for new comments
+    setInterval(() =>  this._fetchComments(), 5000);
+}
+```
+- React optimizes rendering by only updating the DOM when changes are detected.
+- If you transition pages, then you could keep adding more and more timers.
+- To solve this, we'll add `componentWillUnmount(){ clearInterval( this._timer);}`.
+- An **Optimistic Update** is when you give the user immediate feedback even when the remote server has not processed the change.
+- `..` is called the **Spread Operator**.
+- Always check to make sure a user wants to delete data.
+- **One-Way Control Flow** is when you force changes from a higher level component to a lower level component.
