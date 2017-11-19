@@ -41,10 +41,41 @@ var app = angular.module('store', []);
 - To iterate over values, you use the `ng-repeat="product in store.products"`.
 
 # Built-in Directives
-- 
+- **Filters** are ways to control the look of output.
+- The **Currency Filter** will convert numbers into a currency format.
+- `{{product.price | currency}}`
+- The formula is `{{ data | filter:options}}`.
+```angularjs
+{{'1388123412323' | date:'MM/dd/yyy @ h:mma'}}
+```
+- There is also `limitTo:<n>`.
+- This can also be passed inside angular expressions; to limit the number of loops.
+- You can also `orderBy:'-price'` to order them by an attribute.
+- Since an img tag tries to before the angular code, you will need to include `ng-src` to tell it to wait.
+- We can tell angular not to enact this function unless it is clicked using `ng-click="tab = 1"`.
+- Then, we can have it be printed by just using `{{tab}}`.
+- Expressions like this are a two way data binding.
+- You can mark a div using `ng-show="tab == 1"` to define that tab as the *1* tab.
+- You can specify which *tab* to show up first using `ng-init="tab = 1"`.
+- You can tell Angular which is active using `ng-class="{active:tab === 1}"`.
+- But, we shouldn't be including all this logic in the webpage so create a new controller.
+```js
+app.controller('TabController', function(){
+    this.tab = 1;
 
+    this.setTab = function( selectedTab ){
+      this.tab = selectedTab;
+    };
+
+    this.isSet = function( selectedTab ){
+      return this.tab == selectedTab;
+    };
+  });
+```
 
 # Forms
+-
+
 
 # Custom Directives
 
